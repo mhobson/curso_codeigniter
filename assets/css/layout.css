@@ -1,0 +1,207 @@
+/* Site */
+
+/* header */
+
+header{
+    background: #333;
+}
+
+header h1{
+    font-size: 25px;
+    padding: 20px;
+    color: #fff;
+}
+
+header nav{
+	
+}
+
+header nav a{
+	
+}
+
+/* general */
+
+fieldset{
+    border: 1px solid #ccc;
+    padding:20px;
+    margin: 20px;
+}
+
+legend{
+    padding:0 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+input,
+select{
+    display: block;
+}
+
+input[type="checkbox"]{
+    display: inline-block;
+}
+
+label{
+    position: relative;
+    top:3px;
+    margin-left: 5px;
+}
+
+#edit_user > a{
+    color: #ff0000;
+    float: right;
+    font-size: 12px;
+}
+
+#edit_user > a:nth-of-type(2){
+    color: blue;
+    margin-right: 20px;
+}
+
+.keep{
+    margin: 10px 0;
+}
+
+#lost{
+    display: inline-block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select{
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+input[type="file"]{
+    margin-bottom: 10px;
+}
+
+select{
+        box-sizing: content-box;
+}
+
+/* home/index */
+
+.album{
+    padding: 20px;
+}
+
+.album div{
+    margin-top: 20px;
+    display: inline-block;;
+    position: relative;
+}
+
+.album img{
+    max-height: 100px;
+}
+
+.album div a{
+    background: #ff0000;
+    color:#fff;
+    display: inline-block;
+    padding: 5px 10px;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+.album div a:hover{
+    opacity: 0.8;
+}
+
+.album p{
+    font-size: 12px;
+    color:#999;
+    text-align: center;
+}
+
+/* footer */
+
+footer{
+    text-align: center;
+    padding: 20px;
+}
+
+/* admin */
+
+.logout{
+    color:#ccc;
+    font-size: 12px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#admin .content{
+    padding: 20px;
+}
+
+#admin .content table{
+    width: 100%;
+}
+
+#admin .content table th{
+    background: #ccc;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 10px;
+}
+
+#admin .content table tr:nth-of-type(odd){
+    background: #eee;
+}
+
+#admin .content table tr:hover{
+    background: #deedf3;
+}
+
+#admin .content table td{
+    padding: 10px;
+    font-size: 12px;
+    border:1px solid #ccc;
+}
+
+#admin .content p.warning{
+    text-align: center;
+    color:#999;
+    font-size: 12px;
+}
+
+#admin .pagination{
+    margin:5px 0;
+    float:right;
+}
+
+#admin .pagination a,
+#admin .pagination strong{
+    display:inline-block;
+    background:#e6e6e6;
+    color:#666;
+    padding:5px;
+    min-width: 20px;
+    text-align:center;
+    font-size:0.8em;
+}
+
+#admin .pagination strong{
+    background:#ccc;
+}
+
+#admin .pagination a:hover,
+#admin .pagination strong:hover{
+    background:#999;
+    cursor: pointer;
+}
+
+#admin .download{
+    float: right;;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
