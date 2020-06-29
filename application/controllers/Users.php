@@ -81,7 +81,18 @@ class Users extends CI_Controller
 			'password' => $password
 		);
 
+		/*
 		echo "<pre>";
 		print_r($data);
+		*/
+
+		// load model
+		$this->load->model('user');
+
+		// insert into database
+		$this->user->new_user($data);
+
+		//redirect
+		redirect(base_url());
 	}
 }
