@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Usuarios extends CI_Controller
+class Users extends CI_Controller
 {
 	// constructor of CI_Controller
 	public function __construct()
