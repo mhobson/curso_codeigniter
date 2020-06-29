@@ -3,7 +3,7 @@
     <?php echo form_open('new_user', 'id="sign" '); ?>
 
     <input type="text" name="name" id="name" placeholder="Nome:">
-    <input type="email" name="email" id="email" placeholder="E-mail:">
+    <input type="text" name="email" id="email" placeholder="E-mail:">
     <input type="text" name="birth" id="birth" class="date" placeholder="Nascimento">
     <input type="text" name="cpf" id="cpf" maxlength="18" onkeypress="mascaraMutuario(this,cpfCnpj)" placeholder="CPF:">
     <select name="gender" id="gender">
