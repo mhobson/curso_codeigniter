@@ -47,10 +47,24 @@ class Users extends CI_Controller
 			$birth = null;
 		}
 
+		//validate name
+		if ($name == null) {
+			echo '<span class="denied">Informe o seu nome.</span>';
+			echo '<script>$("#name").css({ "box-shadow" : "0 0 5px 1px red" });</script>';
+			exit;
+		}
+
+		//validate e-mail
+		if ($email == null) {
+			echo '<span class="denied">Informe o seu e-mail.</span>';
+			echo '<script>$("#email").css({ "box-shadow" : "0 0 5px 1px red" });</script>';
+			exit;
+		}
+
 		// Form Validation
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('email', 'e-mail', 'required|valid_email|is_unique[users.email]');
+		$this->form_validation->set_rules('email', 'e-mail', 'valid_email|is_unique[users.email]');
 		$this->form_validation->set_rules('password', 'senha', 'min_length[6]');
 
 		// set messages
@@ -64,6 +78,13 @@ class Users extends CI_Controller
 		// check rules
 		if ($this->form_validation->run() == FALSE) {
 			echo validation_errors();
+			exit;
+		}
+
+		//validate password
+		if ($this->input->post('password') == null) {
+			echo '<span class="denied">Informe uma senha.</span>';
+			echo '<script>$("#password").css({ "box-shadow" : "0 0 5px 1px red" });</script>';
 			exit;
 		}
 
@@ -93,8 +114,9 @@ class Users extends CI_Controller
 		// submit insert into database
 		$this->user->new_user($data);
 
-		//redirect
-		redirect(base_url());
+		//redirect by Ajax
+		$this->output->set_content_type('text/javascript')
+			->set_output('<script>window.location.replace(" ' . base_url() . ' ")</script>');
 	}
 
 	/* get city */

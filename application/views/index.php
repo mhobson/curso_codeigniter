@@ -7,7 +7,7 @@
     <input type="text" name="birth" id="birth" class="date" placeholder="Nascimento">
     <input type="text" name="cpf" id="cpf" maxlength="18" onkeypress="mascaraMutuario(this,cpfCnpj)" placeholder="CPF:">
     <select name="gender" id="gender">
-        <option value="0">Gênero</option>
+        <option disabled selected value="0">Gênero</option>
         <option value="1">Masculino</option>
         <option value="2">Feminino</option>
     </select>
@@ -21,6 +21,7 @@
         <option disabled selected value="0">Selecione a cidade</option>
     </select>
     <input type="password" name="password" id="password" placeholder="Senha:">
+
     <input type="submit" id="register" class="botao-a" value="Cadastrar"></input>
     <div id="resp-sign"></div>
 
