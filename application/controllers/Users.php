@@ -12,6 +12,9 @@ class Users extends CI_Controller
 	// index page
 	public function index()
 	{
+		// get flashdata
+		$data['flash'] = $this->session->flashdata();
+
 		// state and city
 		$data['states'] = $this->db->get('states')->result();
 		$data['cities'] = $this->db->get('cities')->result();
@@ -103,7 +106,7 @@ class Users extends CI_Controller
 			'password' => $password
 		);
 
-		/*
+		/* // imprimir na tela
 		echo "<pre>";
 		print_r($data);
 		*/
@@ -113,6 +116,9 @@ class Users extends CI_Controller
 
 		// submit insert into database
 		$this->user->new_user($data);
+
+		// set flashdata
+		$this->session->set_flashdata('alerta', '<div>Cadastro realizado com sucesso!</div>');
 
 		//redirect by Ajax
 		$this->output->set_content_type('text/javascript')
@@ -125,10 +131,10 @@ class Users extends CI_Controller
 		// load model
 		$this->load->model('user');
 
-		// get form
+		// get id_state from post array from form
 		$id_state = $this->input->post('id_state');
 
-		// get from model 
+		// get cities from model
 		$cities = $this->user->get_cities($id_state);
 
 		// return cities

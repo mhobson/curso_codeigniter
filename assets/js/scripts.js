@@ -3,6 +3,9 @@ jQuery(document).ready(function ($) {
     // mask date
     $('.date').mask('00/00/0000')
 
+    // hide flashdata
+    $('#flash').delay(3000).fadeOut(1000);
+
     // get city from state
     $('#state').change(function () {
 

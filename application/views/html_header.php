@@ -28,3 +28,6 @@
 </head>
 
 <body>
+    <?php if (!empty($flash)) { ?>
+        <div id="flash"><?php print_r($flash['alerta']) ?></div>
+    <?php } ?>
