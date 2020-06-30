@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso Codegniter</title>
+    <script>
+        var base_url_js = "<?php echo base_url(); ?>"
+    </script>
 
     <?php
 

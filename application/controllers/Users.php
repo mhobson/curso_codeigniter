@@ -29,6 +29,7 @@ class Users extends CI_Controller
 		$this->load->view('html_footer');
 	}
 
+	/* new_user function */
 	public function new_user()
 	{
 		// get from form
@@ -89,10 +90,29 @@ class Users extends CI_Controller
 		// load model
 		$this->load->model('user');
 
-		// insert into database
+		// submit insert into database
 		$this->user->new_user($data);
 
 		//redirect
 		redirect(base_url());
+	}
+
+	/* get city */
+	public function get_city()
+	{
+		// load model
+		$this->load->model('user');
+
+		// get form
+		$id_state = $this->input->post('id_state');
+
+		// get from model 
+		$cities = $this->user->get_cities($id_state);
+
+		// return cities
+		echo "<option disabled selected value='0'>Selecione a cidade</option>";
+		foreach ($cities as $city) {
+			echo "<option value=" . $city->id . ">" . $city->city . "</option>";
+		}
 	}
 }

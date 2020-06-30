@@ -19,9 +19,6 @@
     </select>
     <select name="city" id="city">
         <option disabled selected value="0">Selecione a cidade</option>
-        <?php foreach ($cities as $city) { ?>
-            <option value="<?php echo $city->id ?>"> <?php echo $city->city ?> </option>
-        <?php } ?>
     </select>
     <input type="password" name="password" id="password" placeholder="Senha:">
     <input type="submit" id="register" class="botao-a" value="Cadastrar"></input>

@@ -7,4 +7,13 @@ class User extends CI_Model
     {
         $this->db->insert('users', $data);
     }
+
+    // get cities from state
+    public function get_cities($id_state)
+    {
+        $this->db->where('id_state', $id_state);
+        $data = $this->db->get('cities')->result();
+
+        return $data;
+    }
 }
