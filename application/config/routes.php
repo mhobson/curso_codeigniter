@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['new_user'] = 'users/new_user';
+$route['edit/(:any)'] = 'users/edit/$1';

@@ -16,4 +16,13 @@ class User extends CI_Model
 
         return $data;
     }
+
+    // get selected user
+    public function get_user($encode)
+    {
+        $this->db->where('encode', $encode);
+        $result = $this->db->get('users')->result();
+
+        return $result;
+    }
 }

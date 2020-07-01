@@ -7,6 +7,9 @@ class Users extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+
+		// load model
+		$this->load->model('user');
 	}
 
 	// index page
@@ -128,9 +131,6 @@ class Users extends CI_Controller
 	/* get city */
 	public function get_city()
 	{
-		// load model
-		$this->load->model('user');
-
 		// get id_state from post array from form
 		$id_state = $this->input->post('id_state');
 
@@ -142,5 +142,31 @@ class Users extends CI_Controller
 		foreach ($cities as $city) {
 			echo "<option value=" . $city->id . ">" . $city->city . "</option>";
 		}
+	}
+
+	/* edit page */
+	public function edit($encode)
+	{
+		// get flashdata
+		$data['flash'] = $this->session->flashdata();
+
+		// get user
+		$data['user'] = $this->user->get_user($encode);
+
+		// state and city
+		$data['states'] = $this->db->get('states')->result();
+		$data['cities'] = $this->user->get_cities($data['user'][0]->state);
+
+		// extra data
+		$data['extras'] =
+			script_tag('assets/js/jquery.mask.min.js') .
+			script_tag('assets/js/maskcpfcnpj.js');
+
+		// load views
+		$this->load->view('html_header', $data);
+		$this->load->view('header');
+		$this->load->view(__FUNCTION__, $data);
+		$this->load->view('footer');
+		$this->load->view('html_footer');
 	}
 }
