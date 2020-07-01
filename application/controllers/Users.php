@@ -153,6 +153,11 @@ class Users extends CI_Controller
 		// get user
 		$data['user'] = $this->user->get_user($encode);
 
+		//date convert
+		if ($data['user'][0]->birth != null) {
+			$data['user'][0]->birth = date('d/m/Y', strtotime(str_replace('-', '/', $data['user'][0]->birth)));
+		}
+
 		// state and city
 		$data['states'] = $this->db->get('states')->result();
 		$data['cities'] = $this->user->get_cities($data['user'][0]->state);
